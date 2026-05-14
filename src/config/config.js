@@ -7,7 +7,7 @@ module.exports = {
         database : process.env.DB_NAME,
         host : process.env.DB_HOST,
         dialect : process.env.DB_DIALECT,
-        miggrationStorageTableName : "migrations",
+        migrationStorageTableName : "migrations",
         migrationStorage : "sequelize",
         migrations : {
             path : "src/migrations",
@@ -22,7 +22,7 @@ module.exports = {
         database : process.env.DB_NAME,
         host : process.env.DB_HOST,
         dialect : process.env.DB_DIALECT,
-        miggrationStorageTableName : "migrations",
+        migrationStorageTableName : "migrations",
         migrationStorage : "sequelize",
         migrations : {
             path : "src/migrations",
@@ -30,12 +30,15 @@ module.exports = {
         },
     },
     production : {
-        username : process.env.DB_USER,
-        password : process.env.DB_PASS,
-        database : process.env.DB_NAME,
-        host : process.env.DB_HOST,
+        use_env_variable : "DB_URL",
         dialect : process.env.DB_DIALECT,
-        miggrationStorageTableName : "migrations",
+        dialectOptions : {
+            ssl : {
+                require : true,
+                rejectUnauthorized : false,
+            },
+        },
+        migrationStorageTableName : "migrations",
         migrationStorage : "sequelize",
         migrations : {
             path : "src/migrations",
