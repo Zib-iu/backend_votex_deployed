@@ -11,16 +11,8 @@
     "mg_undo": "npx sequelize-cli db:migrate:undo",
     "mg_del": "npx sequelize-cli db:migrate:undo:all"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Zibnu/votex-backend.git"
-  },
-  "author": "zibnu",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Zibnu/votex-backend/issues"
-  },
-  "homepage": "https://github.com/Zibnu/votex-backend#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
